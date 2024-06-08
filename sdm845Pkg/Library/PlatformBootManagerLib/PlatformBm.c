@@ -450,7 +450,7 @@ VOID PlatformRegisterOptionsAndKeys(VOID)
   > Authentication action: 1. connect Auth devices;
   >                        2. Identify auto logon user.
 **/
-VOID EFIAPI PlatformBootManagerBeforeConsole(VOID)
+ // VOID EFIAPI PlatformBootManagerBeforeConsole(VOID)
 {
   //
   // Signal EndOfDxe PI Event
@@ -679,16 +679,3 @@ VOID EFIAPI PlatformBootManagerWaitCallback(UINT16 TimeoutRemain)
     Print(L".");
   }
 }
-
-/**
-  The function is called when no boot option could be launched,
-  including platform recovery options and options pointing to applications
-  built into firmware volumes.
-
-  If this function returns, BDS attempts to enter an infinite loop.
-
-  This function is obsolete now, EDKII does not use it so you can 
-  commend this very last line.
-**/
-
-// VOID EFIAPI PlatformBootManagerUnableToBoot(VOID) { return; }
