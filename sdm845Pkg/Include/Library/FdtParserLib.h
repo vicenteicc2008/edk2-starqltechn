@@ -12,9 +12,6 @@
 #include <Library/DebugLib.h>
 #include <Library/PrintLib.h>
 #include <Library/BaseMemoryLib.h>
-#include <fdtparser.h>
-#include <param.h>
-#include <keyval.h>
 
 STATIC
 inline
