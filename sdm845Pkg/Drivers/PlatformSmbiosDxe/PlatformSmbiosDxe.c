@@ -29,7 +29,7 @@
 #include <Library/UefiDriverEntryPoint.h>
 #include <Library/UefiLib.h>
 #include <Library/UefiRuntimeServicesTableLib.h>
-#include <Library/FdtParserLib.h>
+// #include <Library/FdtParserLib.h>
 #include <Protocol/Smbios.h>
 
 /***********************************************************************
