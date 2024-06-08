@@ -683,4 +683,3 @@ POSSIBLE TO REMOVE TOO.
       White.Pixel, (Timeout - TimeoutRemain) * 100 / Timeout, 0);
   if (EFI_ERROR(Status)) {
     Print(L".");
-  }
