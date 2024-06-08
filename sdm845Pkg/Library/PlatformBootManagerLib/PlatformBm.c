@@ -585,7 +585,7 @@ VOID HandleCapsules(VOID)
   > Special boot: e.g.: USB boot, enter UI
   OBSOLETE!
 **/
-// VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
+VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
 {
   EFI_STATUS                    Status;
   EFI_GRAPHICS_OUTPUT_PROTOCOL *GraphicsOutput;
