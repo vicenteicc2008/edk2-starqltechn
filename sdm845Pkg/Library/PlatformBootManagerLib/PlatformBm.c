@@ -447,20 +447,6 @@ VOID PlatformRegisterOptionsAndKeys(VOID)
   ASSERT_EFI_ERROR(Status);
 #ifdef ENABLE_SIMPLE_INIT
 
-  //
-  // Register Simple Init GUI APP
-  //
-  UINT16 OptionSimpleInit = PlatformRegisterFvBootOption(
-      &gSimpleInitFileGuid, L"Simple Init", LOAD_OPTION_ACTIVE);
-  Status = EfiBootManagerAddKeyOptionVariable(
-      NULL, (UINT16)OptionSimpleInit, 0, &UP, NULL);
-#else
-  Status = EfiBootManagerAddKeyOptionVariable(
-      NULL, (UINT16)BootOption.OptionNumber, 0, &UP, NULL);
-#endif
-  ASSERT(Status == EFI_SUCCESS || Status == EFI_ALREADY_STARTED);
-}
-
 //
 // BDS Platform Functions
 //
