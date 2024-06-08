@@ -418,7 +418,7 @@ VOID GetPlatformOptions(VOID)
 }
 
 STATIC
-VOID PlatformRegisterOptionsAndKeys(VOID)
+//VOID PlatformRegisterOptionsAndKeys(VOID)
 {
   EFI_STATUS                   Status;
   EFI_INPUT_KEY                Enter;
