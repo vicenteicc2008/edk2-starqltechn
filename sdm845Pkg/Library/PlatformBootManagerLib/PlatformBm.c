@@ -686,5 +686,9 @@ VOID EFIAPI PlatformBootManagerWaitCallback(UINT16 TimeoutRemain)
   built into firmware volumes.
 
   If this function returns, BDS attempts to enter an infinite loop.
+
+  This function is obsolete now, EDKII does not use it so you can 
+  commend this very last line.
 **/
-VOID EFIAPI PlatformBootManagerUnableToBoot(VOID) { return; }
+
+// VOID EFIAPI PlatformBootManagerUnableToBoot(VOID) { return; }
