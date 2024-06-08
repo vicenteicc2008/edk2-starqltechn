@@ -684,4 +684,3 @@ POSSIBLE TO REMOVE TOO.
   if (EFI_ERROR(Status)) {
     Print(L".");
   }
-}
