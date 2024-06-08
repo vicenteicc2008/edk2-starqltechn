@@ -25,7 +25,6 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   sdm845Pkg/sdm845Pkg.dec
-  // # SimpleInit.dec
 
 [LibraryClasses]
   ArmLib
