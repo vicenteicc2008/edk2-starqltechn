@@ -129,10 +129,5 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
     BuildMemoryTypeInformationHob();
   }
 
-(
-  return EFI_SUCCESS;
-}
-
-(
   return EFI_SUCCESS;
 }
