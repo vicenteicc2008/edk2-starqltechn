@@ -27,19 +27,19 @@
 #include <Protocol/Smbios.h>
 
 #define TYPE0_STRINGS                                    \
-  "EFI Development Kit II / ARM LTD\0" /* Vendor */      \
+  "EFI Development Kit II \0"          /* Vendor */      \
   "EDK II\0"                           /* BiosVersion */ \
   __DATE__"\0"                         /* BiosReleaseDate */
 
 #define TYPE1_STRINGS                                   \
-  "Unknown Manufacturer\0"           /* Manufacturer */ \
-  "Unknown Device\0"                  /* Product Name */ \
-  "Version Unknown\0"                   /* Version */      \
+  "OnePlus\0"                         /* Manufacturer */ \
+  "6\0"                              /* Product Name */ \
+  "Version v2.0rc2-restoredsrc\0"    /* Version */      \
   "                    \0"           /* 20 character buffer */
 
 #define TYPE2_STRINGS                                     \
-  "Unknown Manufacturer\0"           /* Manufacturer */   \
-  "Unknown Device\0"                  /* Product Name */   \
+  "OnePlus\0"                         /* Manufacturer */   \
+  "6\0"                              /* Product Name */   \
   "R0\0"                             /* Version */        \
   "Serial Not Set\0"                 /* Serial */         \
   "Base of Chassis\0"                /* board location */ \
@@ -47,13 +47,13 @@
   "R2\0"                             /* Version */
 
 #define TYPE3_STRINGS                                   \
-  "ARM LTD\0"                        /* Manufacturer */ \
-  "Version SHIT\0"                           /* Version */      \
+  "EDKII Resurrection-2.0rc2\0"      /* Manufacturer */ \
+  "Version v2.0rc2-restoredsrc\0"    /* Version */      \
   "Serial Not Set\0"                 /* Serial  */
 
 #define TYPE4_STRINGS                                               \
   "BGA-1156\0"                       /* socket type */              \
-  "ARM LTD\0"                        /* manufactuer */              \
+  "Qualcomm\0"                        /* manufactuer */              \
   "Snapdragon 845 Extreme Edition\0"  /* processor 1 description */  \
   "Snapdragon 845 Extreme Edition\0"  /* processor 2 description */  \
   "Snapdragon 845 Extreme Edition\0"  /* processor 2 description */  \
