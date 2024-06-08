@@ -645,23 +645,8 @@ VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
   //
   PlatformRegisterFvBootOption(
       &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
-
-#ifdef ENABLE_LINUX_SIMPLE_MASS_STORAGE
-  //
-  // Register Built-in Linux Kernel
-  //
-  PlatformRegisterFvBootOption(
-      &gLinuxSimpleMassStorageGuid, L"USB Attached SCSI (UAS) Storage", LOAD_OPTION_ACTIVE);
-#endif
-
-#ifdef AB_SLOTS_SUPPORT
-  //
-  // Register Switch Slots App
-  //
-  PlatformRegisterFvBootOption(
-      &gSwitchSlotsAppFileGuid, L"Reboot to other slot", LOAD_OPTION_ACTIVE);
-#endif
-}
+  #endif
+  }
 
 /**
   This function is called each second during the boot manager waits the
@@ -689,11 +674,7 @@ VOID EFIAPI PlatformBootManagerWaitCallback(UINT16 TimeoutRemain)
 
   Status = BootLogoUpdateProgress(
       White.Pixel, Black.Pixel,
-#ifdef ENABLE_SIMPLE_INIT
-      L"Press any side button for SimpleInitGUI",
-#else
       L"Press any side button for Boot Options",
-#endif
       White.Pixel, (Timeout - TimeoutRemain) * 100 / Timeout, 0);
   if (EFI_ERROR(Status)) {
     Print(L".");
