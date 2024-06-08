@@ -602,11 +602,7 @@ VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
     if (FirmwareVerLength > 0) {
       Print(VERSION_STRING_PREFIX L"%s\n", PcdGetPtr(PcdFirmwareVersionString));
     }
-#ifdef ENABLE_SIMPLE_INIT
-    Print(L"Press any side button for SimpleInitGUI");
-#else
     Print(L"Press any side button for Boot Options");
-#endif
   }
   else if (FirmwareVerLength > 0) {
     Status = gBS->HandleProtocol(
