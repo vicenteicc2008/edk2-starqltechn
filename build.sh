@@ -212,38 +212,20 @@ do	if [ -n "${i}" ]&&[ -d "${i}/Platform" ]
 		break
 	fi
 done
-for i in "${SIMPLE_INIT}" sdm845Pkg/Library/SimpleInit ./simple-init ../simple-init
-do	if [ -n "${i}" ]&&[ -f "${i}/SimpleInit.inc" ]
-	then	_SIMPLE_INIT="$(realpath "${i}")"
-		break
-	fi
-done
 [ -n "${_EDK2}" ]||_error "EDK2 not found, please see README.md"
 [ -n "${_EDK2_PLATFORMS}" ]||_error "EDK2 Platforms not found, please see README.md"
-[ -n "${_SIMPLE_INIT}" ]||_error "SimpleInit not found, please see README.md"
 echo "EDK2 Path: ${_EDK2}"
 echo "EDK2_PLATFORMS Path: ${_EDK2_PLATFORMS}"
 export CROSS_COMPILE="${CROSS_COMPILE:-aarch64-linux-gnu-}"
 export GCC5_AARCH64_PREFIX="${CROSS_COMPILE}"
 export CLANG38_AARCH64_PREFIX="${CROSS_COMPILE}"
-export PACKAGES_PATH="$_EDK2:$_EDK2_PLATFORMS:$_SIMPLE_INIT:$PWD"
+export PACKAGES_PATH="$_EDK2:$_EDK2_PLATFORMS:$PWD"
 export WORKSPACE="${PWD}/workspace"
 GITCOMMIT="$(git describe --tags --always)"||GITCOMMIT="unknown"
 export GITCOMMIT
 echo > ramdisk
 set -e
 python3 assets/generate-logo.py "${GITCOMMIT}"
-mkdir -p "${_SIMPLE_INIT}/build" "${_SIMPLE_INIT}/root/usr/share/locale"
-for i in "${_SIMPLE_INIT}/po/"*.po
-do	[ -f "${i}" ]||continue
-	_name="$(basename "$i" .po)"
-	_path="${_SIMPLE_INIT}/root/usr/share/locale/${_name}/LC_MESSAGES"
-	mkdir -p "${_path}"
-	msgfmt -o "${_path}/simple-init.mo" "${i}"
-done
-bash "${_SIMPLE_INIT}/scripts/gen-rootfs-source.sh" \
-	"${_SIMPLE_INIT}" \
-	"${_SIMPLE_INIT}/build"
 if [ "${DEVICE}" == "all" ]
 then	E=0
 	for i in "${DEVICES[@]}"
