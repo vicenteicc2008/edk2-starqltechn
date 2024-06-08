@@ -653,7 +653,12 @@ VOID EFIAPI PlatformBootManagerAfterConsole(VOID)
 
   @param TimeoutRemain  The remaining timeout.
 **/
-VOID EFIAPI PlatformBootManagerWaitCallback(UINT16 TimeoutRemain)
+
+/**
+OBSOLETE FUNCTION BELOW!
+POSSIBLE TO REMOVE TOO.
+**/
+// VOID EFIAPI PlatformBootManagerWaitCallback(UINT16 TimeoutRemain)
 {
   EFI_GRAPHICS_OUTPUT_BLT_PIXEL_UNION Black;
   EFI_GRAPHICS_OUTPUT_BLT_PIXEL_UNION White;
