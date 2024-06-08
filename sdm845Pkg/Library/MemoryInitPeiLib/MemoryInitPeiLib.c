@@ -25,6 +25,15 @@
 // This varies by device
 #include <Configuration/DeviceMemoryMap.h>
 
+#define SIZE_KB ((UINTN)(1024))
+#define SIZE_MB ((UINTN)(SIZE_KB * 1024))
+#define SIZE_GB ((UINTN)(SIZE_MB * 1024))
+#define SIZE_MB_BIG(_Size,_Value) ((_Size) > ((_Value) * SIZE_MB))
+#define SIZE_MB_SMALL(_Size,_Value) ((_Size) < ((_Value) * SIZE_MB))
+#define SIZE_MB_IN(_Min,_Max,_Size) \
+  if (SIZE_MB_BIG((MemoryTotal), (_Min)) && SIZE_MB_SMALL((MemoryTotal), (_Max)))\
+    Mem = Mem##_Size##G, MemGB = _Size
+
 extern UINT64 mSystemMemoryEnd;
 
 VOID BuildMemoryTypeInformationHob(VOID);
@@ -82,15 +91,25 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   PARM_MEMORY_REGION_DESCRIPTOR_EX MemoryDescriptorEx =
       gDeviceMemoryDescriptorEx;
   ARM_MEMORY_REGION_DESCRIPTOR
-        MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
+  MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
   UINTN Index = 0;
+  DeviceMemoryAddHob Mem = Mem8G;
+  UINT8 MemGB = 8;
 
-  // Ensure PcdSystemMemorySize has been set
-  ASSERT(PcdGet64(PcdSystemMemorySize) != 0);
+  // Memory   Min    Max   Config
+  SIZE_MB_IN (7168,  8704, 8);
+
+  DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
+    case Mem8G:
+      if (MemoryDescriptorEx->HobOption != Mem) {
+        MemoryDescriptorEx++;
+        continue;
+      }
+      // fallthrough
     case AddMem:
     case AddDev:
       AddHob(MemoryDescriptorEx);
