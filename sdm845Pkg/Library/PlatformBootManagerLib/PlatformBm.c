@@ -436,17 +436,6 @@ VOID PlatformRegisterOptionsAndKeys(VOID)
   Status            = EfiBootManagerRegisterContinueKeyOption(0, &Enter, NULL);
   ASSERT_EFI_ERROR(Status);
 
-  //
-  // Map UP and ESC to Boot Manager Menu or SimpleInitGUI
-  //
-  UP.ScanCode     = SCAN_UP;
-  UP.UnicodeChar  = CHAR_NULL;
-  Esc.ScanCode    = SCAN_ESC;
-  Esc.UnicodeChar = CHAR_NULL;
-  Status          = EfiBootManagerGetBootManagerMenu(&BootOption);
-  ASSERT_EFI_ERROR(Status);
-#ifdef ENABLE_SIMPLE_INIT
-
 //
 // BDS Platform Functions
 //
