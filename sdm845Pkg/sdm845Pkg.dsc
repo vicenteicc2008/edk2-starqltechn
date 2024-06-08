@@ -116,8 +116,6 @@
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
   gArmTokenSpaceGuid.PcdSystemMemorySize|0xC0000000
 
-  gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore|0x83300000
-
   # We bring up eight cores here!
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|2
