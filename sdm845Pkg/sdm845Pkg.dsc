@@ -342,7 +342,7 @@
   ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 !endif #$(INCLUDE_TFTP_COMMAND)
 
-  sdm845Pkg/Binary/845/LinuxSimpleMassStorage/LinuxSimpleMassStorage.inf
+  #sdm845Pkg/Binary/845/LinuxSimpleMassStorage/LinuxSimpleMassStorage.inf
 
   sdm845Pkg/Drivers/SynapticsTouchDxe/SynapticsTouchDevice.inf
   sdm845Pkg/Drivers/SynapticsTouchDxe/SynapticsTouchDxe.inf
