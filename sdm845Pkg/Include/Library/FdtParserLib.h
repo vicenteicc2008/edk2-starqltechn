@@ -12,6 +12,7 @@
 #include <Library/DebugLib.h>
 #include <Library/PrintLib.h>
 #include <Library/BaseMemoryLib.h>
+#include <KernelFdt.h>
 #include <fdtparser.h>
 #include <param.h>
 #include <keyval.h>
