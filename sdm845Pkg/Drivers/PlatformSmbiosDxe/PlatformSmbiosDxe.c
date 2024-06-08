@@ -27,21 +27,21 @@
 #include <Protocol/Smbios.h>
 
 #define TYPE0_STRINGS                                    \
-  "EFI Development Kit II \0"          /* Vendor */      \
-  "EDK II\0"                           /* BiosVersion */ \
-  __DATE__"\0"                         /* BiosReleaseDate */
+  "TianoCore EDK II \0"                /* Vendor */      \
+  "Resurrected-v2.0rc2\0"              /* BiosVersion */ \
+  "2024-06"\0"                         /* BiosReleaseDate */
 
 #define TYPE1_STRINGS                                   \
   "OnePlus\0"                         /* Manufacturer */ \
-  "6\0"                              /* Product Name */ \
+  "OnePlus6 Series\0"                 /* Product Name */ \
   "Version v2.0rc2-restoredsrc\0"    /* Version */      \
   "                    \0"           /* 20 character buffer */
 
 #define TYPE2_STRINGS                                     \
   "OnePlus\0"                         /* Manufacturer */   \
-  "6\0"                              /* Product Name */   \
+  "OnePlus6 Series\0"                /* Product Name */   \
   "R0\0"                             /* Version */        \
-  "Serial Not Set\0"                 /* Serial */         \
+  "0xDEADBEEF\0"                     /* Serial */         \
   "Base of Chassis\0"                /* board location */ \
   "R1\0"                             /* Version */        \
   "R2\0"                             /* Version */
