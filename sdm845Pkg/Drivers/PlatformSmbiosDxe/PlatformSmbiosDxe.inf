@@ -47,6 +47,7 @@
 
 [FixedPcd]
   gArmTokenSpaceGuid.PcdSystemMemoryBase
+  gArmTokenSpaceGuid.PcdSystemMemorySize
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareRevision
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString
   gsdm845PkgTokenSpaceGuid.PcdDeviceVendor
