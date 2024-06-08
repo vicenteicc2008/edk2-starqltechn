@@ -29,7 +29,7 @@
 #define TYPE0_STRINGS                                    \
   "TianoCore EDK II \0"                /* Vendor */      \
   "Resurrected-v2.0rc2\0"              /* BiosVersion */ \
-  "June 2024"\0"                       /* BiosReleaseDate */ \
+  _TIME_"\0"                          /* BiosReleaseDate */ 
 
 #define TYPE1_STRINGS                                   \
   "OnePlus\0"                         /* Manufacturer */ \
