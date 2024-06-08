@@ -17,7 +17,7 @@
   FILE_GUID                      = BAD0554E-22E9-4D83-9AFD-CC87727A1A45
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = PlatformSmbiosDriverEntryPoint
+  ENTRY_POINT                    = SmbiosTablePublishEntry
 
 [Sources]
   PlatformSmbiosDxe.c
