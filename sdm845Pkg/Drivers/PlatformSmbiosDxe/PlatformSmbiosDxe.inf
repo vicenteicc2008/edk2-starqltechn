@@ -55,11 +55,9 @@
 
 [Protocols]
   gEfiSmbiosProtocolGuid                      # PROTOCOL ALWAYS_CONSUMED
-  gKernelFdtProtocolGuid
 
 [Guids]
 
 [Depex]
   gEfiSmbiosProtocolGuid AND
-  gKernelFdtProtocolGuid
 
