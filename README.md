@@ -1,37 +1,18 @@
-# EDK2 UEFI Firmware For Snapdragon 845 (sdm845)
+# EDK2 Resurrect v2.0rc2 for SDM845 Platforms
 
-![Github](https://img.shields.io/github/downloads/edk2-porting/edk2-sdm845/total)
-![Github](https://img.shields.io/github/v/release/edk2-porting/edk2-sdm845?include_prereleases)
-
-EDK2 implementation for Snapdragon 845 platform.
-
-[Chinese version (中文版)](https://github.com/edk2-porting/edk2-sdm845/blob/master/README.zh.md)
+EDK2 implementation for Snapdragon 845 platforms.
 
 ## Resources
 
-[Telegram group](https://t.me/joinchat/MNjTmBqHIokjweeN0SpoyA)
+[Telegram group](https://t.me/WinOnOP6)
 
-[Discord server](https://discord.gg/XXBWfag)
+[Windows Drivers](https://github.com/Daniel224455/WoA-on-OnePlus6-Series/releases/tag/Drivers)
 
-QQ chinese group:
+[Install guide](https://github.com/Daniel224455/WoA-on-OnePlus6-Series)
 
-[697666196 (Renegade-Project OffTopic 1)](https://jq.qq.com/?_wv=1027&k=JbOy29zv)
-
-[996450026 (Renegade-Project OffTopic 2)](https://jq.qq.com/?_wv=1027&k=16xaDJnU)
-
-[737223105 (Renegade-Project Linux/edk2)](https://jq.qq.com/?_wv=1027&k=KsQdNXl6)
-
-[Windows Drivers](https://github.com/edk2-porting/WOA-Drivers)
-
-[Project website](https://renegade-project.org/)
-
-[Project forum](https://forum.renegade-project.org/)
+[Contact if you want to add any device](https://t.me/Daniel6745)
 
 ## WARNING
-
-**IT IS STRICTLY PROHIBITED TO USE THIS REPOSITORY FOR ANY COMMERCIAL PURPOSES**
-
-**If you want to redistribute, you need to ensure that users can get updates**
 
 **DO NOT EVER TRY TO PORT IT TO *SONY* and *GOOGLE* DEVICES**
 
@@ -39,7 +20,7 @@ QQ chinese group:
 
 ## Supported devices
 
-[Windows Status Matrix](https://renegade-project.org/#/en/windows/state-frame.html)
+[Windows Status Spreadsheet](https://docs.google.com/spreadsheets/d/1oUuZ4VeFS1Lz59oMmt0uTAT6-sXvckPn9W2ELrDLQVs/edit?usp=drivesdk)
 
 ## Dependencies
 
@@ -55,31 +36,13 @@ sudo apt upgrade
 sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu python3-distutils python3-pil python3-git gettext
 ```
 
-If you are using GCC 11+, modify `edk2/BaseTools/Source/C/Makefiles/header.makefile`
-
-```diff
-diff --git a/BaseTools/Source/C/Makefiles/header.makefile b/BaseTools/Source/C/Makefiles/header.makefile
-index 0df728f..247c917 100644
---- a/BaseTools/Source/C/Makefiles/header.makefile
-+++ b/BaseTools/Source/C/Makefiles/header.makefile
-@@ -92,7 +92,7 @@ BUILD_CFLAGS = -MD -fshort-wchar -fno-strict-aliasing -fwrapv \
- -Wno-unused-result -nostdlib -g
- else
- BUILD_CFLAGS = -MD -fshort-wchar -fno-strict-aliasing -fwrapv \
---fno-delete-null-pointer-checks -Wall -Werror \
-+-fno-delete-null-pointer-checks -Wall \^M
- -Wno-deprecated-declarations -Wno-stringop-truncation -Wno-restrict \
- -Wno-unused-result -nostdlib -g
- endif
-```
-
 ## Building
 
 1.Clone this project
 
 ```bash
-git clone https://github.com/edk2-porting/edk2-sdm845.git --depth=1
-cd edk2-sdm845
+git clone https://github.com/Daniel224455/edk2-resurrect-v2.0.git --depth=1
+cd edk2-resurrect-v2.0
 ```
 
 2.1 Build this project (only on linux)
@@ -88,7 +51,7 @@ cd edk2-sdm845
 bash build.sh --device DEVICE
 ```
 
-2.2 For Macos/Windows (you can use docker)
+2.2 For macOS/Windows (you can use docker)
 
 ````bash
 docker-compose run edk2 ./build.sh -d DEVICE
@@ -109,6 +72,8 @@ fastboot flash recovery boot_DEVICE.img
 ```
 
 ## Credits
+ 
+`Daniel6745` for fixing/resurrecting v2.0rc2 edk2-msm source
 
 `fxsheep` for his original `edk2-sagit`
 
