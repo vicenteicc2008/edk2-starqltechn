@@ -44,4 +44,3 @@
   gArmTokenSpaceGuid.PcdSystemMemorySize
   gArmTokenSpaceGuid.PcdFdBaseAddress
   gArmTokenSpaceGuid.PcdFdSize
-  gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore
