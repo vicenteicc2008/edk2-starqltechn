@@ -25,6 +25,3 @@
   gsdm845PkgTokenSpaceGuid.PcdDeviceVendor|"OnePlus"
   gsdm845PkgTokenSpaceGuid.PcdDeviceProduct|"6"
   gsdm845PkgTokenSpaceGuid.PcdDeviceCodeName|"enchilada"
-
-  # Simple Init
-  gSimpleInitTokenSpaceGuid.PcdGuiDefaultDPI|440
