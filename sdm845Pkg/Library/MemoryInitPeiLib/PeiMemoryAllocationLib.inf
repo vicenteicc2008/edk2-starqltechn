@@ -34,7 +34,6 @@
 [LibraryClasses]
   DebugLib
   HobLib
-  SimpleInitLib
   ArmMmuLib
   ArmPlatformLib
 
