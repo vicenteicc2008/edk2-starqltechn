@@ -29,7 +29,6 @@
   ArmPkg/ArmPkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
   sdm845Pkg/sdm845Pkg.dec
-  SimpleInit.dec
 
 [LibraryClasses]
   ArmLib
