@@ -77,9 +77,7 @@
   gEfiEndOfDxeEventGroupGuid
   gEfiTtyTermGuid
   gUefiShellFileGuid
-  gLinuxSimpleMassStorageGuid
   gSwitchSlotsAppFileGuid
-  gSimpleInitFileGuid
 
 [Protocols]
   gEdkiiNonDiscoverableDeviceProtocolGuid
