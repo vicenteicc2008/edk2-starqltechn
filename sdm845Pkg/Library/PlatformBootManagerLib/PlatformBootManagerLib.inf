@@ -34,7 +34,6 @@
   MdePkg/MdePkg.dec
   ShellPkg/ShellPkg.dec
   sdm845Pkg/sdm845Pkg.dec
-  SimpleInit.dec
 
 [LibraryClasses]
   BaseLib
