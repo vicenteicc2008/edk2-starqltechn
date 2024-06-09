@@ -748,9 +748,23 @@ PlatformBootManagerAfterConsole (
 	&gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE
 	);*/
     PlatformRegisterFvBootOption (
-    &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE
-    );
+    &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
 
+#ifdef ENABLE_LINUX_SIMPLE_MASS_STORAGE
+  //
+  // Register Built-in Linux Kernel
+  //
+  PlatformRegisterFvBootOption(
+      &gLinuxSimpleMassStorageGuid, L"Enter Linux Mass Storage", LOAD_OPTION_ACTIVE);
+#endif
+
+#ifdef AB_SLOTS_SUPPORT
+  //
+  // Register Switch Slots App
+  //
+  PlatformRegisterFvBootOption(
+      &gSwitchSlotsAppFileGuid, L"Reboot to other slot", LOAD_OPTION_ACTIVE);
+#endif
 }
 
 /**
