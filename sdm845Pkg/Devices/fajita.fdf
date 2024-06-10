@@ -621,12 +621,6 @@ APRIORI DXE {
   INF sdm845Pkg/Drivers/Op6tSlotDxe/Op6tSlotDxe.inf
 !endif #$(AB_SLOTS_SUPPORT)
 
-  #
-  # Simple Init GUI
-  #
-  INF src/main/SimpleInitMain.inf
-
-  INF src/kernelfdt/KernelFdtDxe.inf
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
