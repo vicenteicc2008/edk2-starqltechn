@@ -515,6 +515,11 @@ APRIORI DXE {
     SECTION PE32 = sdm845Pkg/Binary/845/UsbMsdDxe/UsbMsdDxe.efi
     SECTION UI = "UsbMsdDxe"
   }
+
+    FILE DRIVER = F536D559-459F-48FA-8BBC-43B554ECAE8D {
+    SECTION PE32 = sdm845Pkg/Binary/845/LinuxLoader/LinuxLoader.efi
+    SECTION UI = "LinuxLoader"
+  }
   
 
   INF sdm845Pkg/Drivers/sdm845Dxe/sdm845Dxe.inf
