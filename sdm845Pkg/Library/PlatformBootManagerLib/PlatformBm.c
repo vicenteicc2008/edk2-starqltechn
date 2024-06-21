@@ -669,7 +669,7 @@ HandleCapsules (
 }
 
 
-#define VERSION_STRING_PREFIX    L"edk2-resurrect-v2.0 "
+#define VERSION_STRING_PREFIX    L"Tianocore/EDK2 firmware version "
 
 /**
   Do the platform specific action after the console is ready
