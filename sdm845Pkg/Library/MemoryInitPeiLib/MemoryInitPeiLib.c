@@ -86,6 +86,10 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   UINTN Index = 0;
   DeviceMemoryAddHob Mem = Mem4G;
   UINT8 MemGB = 4;
+  DeviceMemoryAddHob Mem = Mem6G;
+  UINT8 MemGB = 6;
+  DeviceMemoryAddHob Mem = Mem8G;
+  UINT8 MemGB = 8;
 
   DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
