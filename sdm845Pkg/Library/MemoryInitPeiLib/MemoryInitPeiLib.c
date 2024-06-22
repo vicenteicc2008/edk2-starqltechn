@@ -117,8 +117,6 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
         continue;
       }
       // fallthrough
-    case AddMem:
-    case AddDev:
       AddHob(MemoryDescriptorEx);
       break;
     case NoHob:
