@@ -51,8 +51,8 @@ NOTE : If your device has multiple ram configs, then instead of `fajita` ex. use
 ```bash
 bash build.sh --device DEVICE
 ```
-```bash
-If you want a DEBUG build, then
+2.1,5 Building EDK2 as DEBUG (optional, used for debugging certain issues)
+```
 bash build.sh --device -r DEBUG
 ```
 
