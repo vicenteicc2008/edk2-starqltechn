@@ -46,6 +46,7 @@ cd edk2-resurrect-v2.0
 ```
 
 2.1 Build this project (only on linux)
+NOTE : If your device has multiple ram configs, then instead of `fajita` ex. use `fajita-8g` (8gb ram config)
 
 ```bash
 bash build.sh --device DEVICE
