@@ -3,8 +3,11 @@
 ##### Change this to add device #####
 DEVICES=(
 	dipper
-	enchilada
-	fajita
+	enchilada-6g
+        enchilada-8g
+	fajita-6g
+	fajita-8g
+	fajita-10g
 	polaris
 	beryllium-tianma
 	beryllium-ebbg
