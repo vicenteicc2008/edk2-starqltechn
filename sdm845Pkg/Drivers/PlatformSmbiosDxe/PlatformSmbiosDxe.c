@@ -32,14 +32,14 @@
   "2024-06\0"                    /* BiosReleaseDate */ 
 
 #define TYPE1_STRINGS                                   \
-  "OnePlus\0"                         /* Manufacturer */ \
-  "OnePlus6 Series\0"                 /* Product Name */ \
+  "TianoCore\0"                         /* Manufacturer */ \
+  "Snapdragon 845 Device\0"                 /* Product Name */ \
   "Version v2.0rc2-restoredsrc\0"    /* Version */      \
   "                    \0"           /* 20 character buffer */
 
 #define TYPE2_STRINGS                                     \
-  "OnePlus\0"                         /* Manufacturer */   \
-  "OnePlus6 Series\0"                /* Product Name */   \
+  "TianoCore\0"                         /* Manufacturer */   \
+  "Snapdragon 845 Device\0"                /* Product Name */   \
   "R0\0"                             /* Version */        \
   "0xDEADBEEF\0"                     /* Serial */         \
   "Base of Chassis\0"                /* board location */ \
