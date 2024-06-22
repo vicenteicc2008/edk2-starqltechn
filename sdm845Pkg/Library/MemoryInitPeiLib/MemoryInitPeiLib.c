@@ -82,15 +82,40 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   PARM_MEMORY_REGION_DESCRIPTOR_EX MemoryDescriptorEx =
       gDeviceMemoryDescriptorEx;
   ARM_MEMORY_REGION_DESCRIPTOR
-        MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
+  MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
   UINTN Index = 0;
 
-  // Ensure PcdSystemMemorySize has been set
-  ASSERT(PcdGet64(PcdSystemMemorySize) != 0);
+#ifdef Mem10G
+  DeviceMemoryAddHob Mem = Mem10G
+  UINT8 MemGB = 10;
+#endif
+
+#ifdef Mem8G
+  DeviceMemoryAddHob Mem = Mem8G;
+  UINT8 MemGB = 8;
+#endif
+
+#ifdef Mem6G
+  DeviceMemoryAddHob Mem = Mem6G;
+  UINT8 MemGB = 6;
+#endif
+
+#ifdef Mem4G
+  DeviceMemoryAddHob Mem = Mem4G;
+  UINT8 MemGB = 4;
+#endif
+
+  DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
+    case Mem8G:
+      if (MemoryDescriptorEx->HobOption != Mem) {
+        MemoryDescriptorEx++;
+        continue;
+      }
+      // fallthrough
     case AddMem:
     case AddDev:
       AddHob(MemoryDescriptorEx);
@@ -131,3 +156,4 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
 
   return EFI_SUCCESS;
 }
+
