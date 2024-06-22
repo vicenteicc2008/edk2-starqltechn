@@ -13,7 +13,6 @@
  *
  **/
 
-#define FDT_DIRECT
 #include <PiPei.h>
 
 #include <Library/ArmMmuLib.h>
@@ -22,7 +21,6 @@
 #include <Library/HobLib.h>
 #include <Library/MemoryAllocationLib.h>
 #include <Library/PcdLib.h>
-#include <Library/FdtParserLib.h>
 
 // This varies by device
 #include <Configuration/DeviceMemoryMap.h>
@@ -101,19 +99,6 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   UINTN MemoryTotal = 0;
   DeviceMemoryAddHob Mem = Mem4G;
   UINT8 MemGB = 4;
-  fdt *Fdt;
-
-  Fdt = GetFdt();
-  ASSERT(Fdt != NULL);
-
-  while (fdt_get_memory(Fdt, (int)Node, (uint64_t*)&MemoryBase, (uint64_t*)&MemorySize)) {
-    MemoryTotal += MemorySize;
-    DEBUG((
-      EFI_D_INFO,
-      "FDT Memory %-2d: 0x%016llx - 0x%016llx (0x%016llx)\n",
-      Node, MemoryBase, (MemoryBase + MemorySize), MemorySize
-    ));
-    Node++;
   }
 
   // Memory   Min    Max   Config
@@ -122,7 +107,6 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   SIZE_MB_IN (7168,  8704, 8);
   SIZE_MB_IN (9216, 10752, 10);
 
-  DEBUG((EFI_D_INFO, "FDT Memory Total: 0x%016lx (%d GiB)\n", MemoryTotal, MemoryTotal / SIZE_GB));
   DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
   // Run through each memory descriptor
