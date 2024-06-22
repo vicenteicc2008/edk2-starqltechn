@@ -12,7 +12,7 @@
 !include sdm845Pkg/sdm845Pkg.dsc
 
 [BuildOptions.common]
-  GCC:*_*_AARCH64_CC_FLAGS =
+  GCC:*_*_AARCH64_CC_FLAGS = -DMem4G=1
 
 [PcdsFixedAtBuild.common]
 
