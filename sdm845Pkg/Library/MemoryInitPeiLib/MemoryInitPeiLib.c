@@ -84,10 +84,6 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   ARM_MEMORY_REGION_DESCRIPTOR
   MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
   UINTN Index = 0;
-  DeviceMemoryAddHob Mem = Mem4G;
-  UINT8 MemGB = 4;
-  DeviceMemoryAddHob Mem = Mem6G;
-  UINT8 MemGB = 6;
   DeviceMemoryAddHob Mem = Mem8G;
   UINT8 MemGB = 8;
 
