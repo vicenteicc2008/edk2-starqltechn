@@ -15,7 +15,7 @@
 !include sdm845Pkg/sdm845Pkg.dsc
 
 [BuildOptions.common]
-  GCC:*_*_AARCH64_CC_FLAGS = -DAB_SLOTS_SUPPORT=1
+  GCC:*_*_AARCH64_CC_FLAGS = -DAB_SLOTS_SUPPORT=1 -DMEMORY_6GB
 
 [PcdsFixedAtBuild.common]
 
