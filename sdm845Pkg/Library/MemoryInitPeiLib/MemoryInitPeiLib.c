@@ -107,6 +107,27 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
 
   DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
+#ifdef Mem10G
+  // Run through each memory descriptor
+  while (MemoryDescriptorEx->Length != 0) {
+    switch (MemoryDescriptorEx->HobOption) {
+    case Mem10G:
+      if (MemoryDescriptorEx->HobOption != Mem) {
+        MemoryDescriptorEx++;
+        continue;
+      }
+      // fallthrough
+    case AddMem:
+    case AddDev:
+      AddHob(MemoryDescriptorEx);
+      break;
+    case NoHob:
+    default:
+      goto update;
+    }
+#endif
+
+#ifdef Mem8G
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
@@ -124,6 +145,47 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
     default:
       goto update;
     }
+#endif
+
+#ifdef Mem6G
+  // Run through each memory descriptor
+  while (MemoryDescriptorEx->Length != 0) {
+    switch (MemoryDescriptorEx->HobOption) {
+    case Mem6G:
+      if (MemoryDescriptorEx->HobOption != Mem) {
+        MemoryDescriptorEx++;
+        continue;
+      }
+      // fallthrough
+    case AddMem:
+    case AddDev:
+      AddHob(MemoryDescriptorEx);
+      break;
+    case NoHob:
+    default:
+      goto update;
+    }
+#endif
+
+#ifdef Mem4G
+  // Run through each memory descriptor
+  while (MemoryDescriptorEx->Length != 0) {
+    switch (MemoryDescriptorEx->HobOption) {
+    case Mem4G:
+      if (MemoryDescriptorEx->HobOption != Mem) {
+        MemoryDescriptorEx++;
+        continue;
+      }
+      // fallthrough
+    case AddMem:
+    case AddDev:
+      AddHob(MemoryDescriptorEx);
+      break;
+    case NoHob:
+    default:
+      goto update;
+    }
+#endif
 
   update:
     ASSERT(Index < MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT);
