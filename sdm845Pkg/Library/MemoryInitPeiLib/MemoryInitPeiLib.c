@@ -85,29 +85,29 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
   MemoryDescriptor[MAX_ARM_MEMORY_REGION_DESCRIPTOR_COUNT];
   UINTN Index = 0;
 
-#ifdef Mem10G
+#ifdef MEMORY_10GB
   DeviceMemoryAddHob Mem = Mem10G
   UINT8 MemGB = 10;
 #endif
 
-#ifdef Mem8G
+#ifdef MEMORY_8GB
   DeviceMemoryAddHob Mem = Mem8G;
   UINT8 MemGB = 8;
 #endif
 
-#ifdef Mem6G
+#ifdef MEMORY_6GB
   DeviceMemoryAddHob Mem = Mem6G;
   UINT8 MemGB = 6;
 #endif
 
-#ifdef Mem4G
+#ifdef MEMORY_4GB
   DeviceMemoryAddHob Mem = Mem4G;
   UINT8 MemGB = 4;
 #endif
 
   DEBUG((EFI_D_INFO, "Select Config: %d GiB\n", MemGB));
 
-#ifdef Mem10G
+#ifdef MEMORY_10GB
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
@@ -125,7 +125,7 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
     }
 #endif
 
-#ifdef Mem8G
+#ifdef MEMORY_8GB
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
@@ -143,7 +143,7 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
     }
 #endif
 
-#ifdef Mem6G
+#ifdef MEMORY_6GB
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
@@ -161,7 +161,7 @@ MemoryPeim(IN EFI_PHYSICAL_ADDRESS UefiMemoryBase, IN UINT64 UefiMemorySize)
     }
 #endif
 
-#ifdef Mem4G
+#ifdef MEMORY_4GB
   // Run through each memory descriptor
   while (MemoryDescriptorEx->Length != 0) {
     switch (MemoryDescriptorEx->HobOption) {
