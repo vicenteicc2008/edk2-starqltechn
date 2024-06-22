@@ -8,7 +8,8 @@ DEVICES=(
 	fajita-6g
 	fajita-8g
 	fajita-10g
-	polaris
+	polaris-6g
+        polaris-8g
 	beryllium-tianma
 	beryllium-ebbg
 	perseus
