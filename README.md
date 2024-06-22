@@ -5,6 +5,7 @@ EDK2 implementation for Snapdragon 845 platforms.
 ## Resources
 
 (OnePlus 6/6T Guide)
+
 [Telegram group](https://t.me/WinOnOP6)
 
 [Windows Drivers](https://github.com/Daniel224455/WoA-on-OnePlus6-Series/releases/tag/Drivers)
