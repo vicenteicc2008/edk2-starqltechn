@@ -51,6 +51,10 @@ NOTE : If your device has multiple ram configs, then instead of `fajita` ex. use
 ```bash
 bash build.sh --device DEVICE
 ```
+```bash
+If you want a DEBUG build, then
+bash build.sh --device -r DEBUG
+```
 
 2.2 For macOS/Windows (you can use docker)
 
