@@ -25,9 +25,9 @@
 // This varies by device
 #include <Configuration/DeviceMemoryMap.h>
 
-!ifdef $(UEFIPLAT_MEMMAP)
+#ifdef $(UEFIPLAT_MEMMAP)
 #include <Configuration/DeviceMemoryMap_UEFIPLAT.h>
-!endif
+#endif
 
 extern UINT64 mSystemMemoryEnd;
 
