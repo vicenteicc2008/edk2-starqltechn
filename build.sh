@@ -32,6 +32,7 @@ DEVICES=(
 	equuleus
         starqlte
         akari
+        sargo
 )
 #####################################
 
