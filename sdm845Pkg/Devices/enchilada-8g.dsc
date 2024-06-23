@@ -10,7 +10,7 @@
   FLASH_DEFINITION               = sdm845Pkg/Devices/enchilada.fdf
 
   # Enable A/B Slot Environment
-  DEFINE ONEPLUS_AB        = TRUE
+  DEFINE AB_SLOTS_SUPPORT        = TRUE
 
 !include sdm845Pkg/sdm845Pkg.dsc
 
