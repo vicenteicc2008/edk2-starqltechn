@@ -742,13 +742,15 @@ PlatformBootManagerAfterConsole (
   //
   // Register UEFI Shell
   //
-   
-	
-   /*PlatformRegisterFvBootOption (
-	&gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE
-	);*/
     PlatformRegisterFvBootOption (
     &gUefiShellFileGuid, L"UEFI Shell", LOAD_OPTION_ACTIVE);
+   
+//
+// Register ABL App
+//	
+   PlatformRegisterFvBootOption (
+   &gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE);
+
 
 #ifdef AB_SLOTS_SUPPORT
   //
