@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/
  */
 
-#include <Drivers/Op6tSlotDxe/Op6tSlotDxe.inf>
+#include <Library/BootSlotLib.h>
 #include <Library/UefiApplicationEntryPoint.h>
 
 EFI_STATUS
