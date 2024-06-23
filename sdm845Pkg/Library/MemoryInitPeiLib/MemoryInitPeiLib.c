@@ -25,6 +25,10 @@
 // This varies by device
 #include <Configuration/DeviceMemoryMap.h>
 
+!ifdef $(UEFIPLAT_MEMMAP)
+#include <Configuration/DeviceMemoryMap_UEFIPLAT.h>
+!endif
+
 extern UINT64 mSystemMemoryEnd;
 
 VOID BuildMemoryTypeInformationHob(VOID);
