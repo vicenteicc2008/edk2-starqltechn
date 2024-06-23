@@ -599,12 +599,12 @@ APRIORI DXE {
   #
   # OnePlus 6(T) A/B Slot Support
   #
-!ifdef $(AB_SLOTS_SUPPORT)
+!ifdef $(ONEPLUS_AB)
 INF sdm845Pkg/Drivers/Op6tSlotDxe/Op6tSlotDxe.inf
 !else
   INF sdm845Pkg/Application/SwitchSlotsApp/SwitchSlotsApp.inf
   INF sdm845Pkg/Drivers/BootSlotDxe/BootSlotDxe.inf
-!endif #$(AB_SLOTS_SUPPORT)
+!endif #$(ONEPLUS_AB)
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
