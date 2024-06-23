@@ -748,8 +748,14 @@ PlatformBootManagerAfterConsole (
 //
 // Register ABL App
 //	
-   PlatformRegisterFvBootOption (
-   &gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE);
+//   PlatformRegisterFvBootOption (
+//   &gEfiAblFvNameGuid, L"Android Fastboot App", LOAD_OPTION_ACTIVE);
+
+  //
+  // Register Mass Storage App
+  //
+  PlatformRegisterFvBootOption(
+      &gUsbfnMsdAppFileGuid, L"Mass Storage (MsdApp)", LOAD_OPTION_ACTIVE);
 
 
 #ifdef AB_SLOTS_SUPPORT
