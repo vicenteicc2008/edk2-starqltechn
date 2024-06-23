@@ -23,11 +23,11 @@
 #include <Library/PcdLib.h>
 
 // This varies by device
-#ifdef $(UEFIPLAT_MEMMAP)
+#ifdef UEFIPLAT_MEMMAP
 #include <Configuration/DeviceMemoryMap_UEFIPLAT.h>
 #else
 #include <Configuration/DeviceMemoryMap.h>
-#endif $(UEFIPLAT_MEMMAP)
+#endif UEFIPLAT_MEMMAP
 
 extern UINT64 mSystemMemoryEnd;
 
