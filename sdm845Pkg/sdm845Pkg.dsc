@@ -289,11 +289,12 @@
   # OnePlus 6T A/B Slot Support
   # Op6tSlotDxe and BootSlotDxe have the same goal, do not use them both at the same time in device fdf.
   #
+!ifdef $(ONEPLUS_AB)
   sdm845Pkg/Drivers/Op6tSlotDxe/Op6tSlotDxe.inf
-!ifdef $(AB_SLOTS_SUPPORT)
+!else
   sdm845Pkg/Drivers/BootSlotDxe/BootSlotDxe.inf
   sdm845Pkg/Application/SwitchSlotsApp/SwitchSlotsApp.inf
-!endif #$(AB_SLOTS_SUPPORT)
+!endif $(ONEPLUS_AB)
 
   #
   # Bds
