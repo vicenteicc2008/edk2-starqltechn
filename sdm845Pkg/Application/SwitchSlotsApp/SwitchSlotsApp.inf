@@ -33,10 +33,10 @@
   UefiLib
   UefiApplicationEntryPoint
   BootSlotLib
+  Op6tSlotDxe
 
 [Packages]
   MdePkg/MdePkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
   MdeModulePkg/MdeModulePkg.dec
   sdm845Pkg/sdm845Pkg.dec
-  sdm845Pkg/Drivers/Op6tSlotDxe/Op6tSlotDxe.inf
