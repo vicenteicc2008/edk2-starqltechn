@@ -78,7 +78,7 @@
   gEfiTtyTermGuid
   gUefiShellFileGuid
   gSwitchSlotsAppFileGuid
-  gEfiAblFvNameGuid
+  gUsbfnMsdAppFileGuid
 
 [Protocols]
   gEdkiiNonDiscoverableDeviceProtocolGuid
