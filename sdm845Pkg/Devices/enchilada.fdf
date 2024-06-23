@@ -581,8 +581,6 @@ APRIORI DXE {
   INF ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 !endif #$(INCLUDE_TFTP_COMMAND)
 
-  INF  sdm845Pkg/Binary/845/UsbfnMsdApp/UsbfnMsdApp.inf
-
 
   #
   # Bds
@@ -595,6 +593,11 @@ APRIORI DXE {
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
   INF MdeModulePkg/Application/UiApp/UiApp.inf
   INF sdm845Pkg/Drivers/LogoDxe/LogoDxe.inf
+
+  #
+  # Reimplementation of the old MassStorageApp
+  #
+  INF  sdm845Pkg/Application/UsbfnMsdApp/UsbfnMsdApp.inf
 
   #
   # OnePlus 6(T) A/B Slot Support
