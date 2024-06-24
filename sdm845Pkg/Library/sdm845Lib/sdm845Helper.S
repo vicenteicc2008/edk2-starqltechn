@@ -14,6 +14,9 @@
 #include <AsmMacroIoLibV8.h>
 #include <Library/ArmLib.h>
 
+.text
+.align 3
+
 ASM_FUNC(ArmPlatformPeiBootAction)
 msr SPSel, #1
 startlabel:
