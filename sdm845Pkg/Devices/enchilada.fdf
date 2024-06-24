@@ -595,11 +595,6 @@ APRIORI DXE {
   INF sdm845Pkg/Drivers/LogoDxe/LogoDxe.inf
 
   #
-  # Reimplementation of the old MassStorageApp
-  #
-  INF  sdm845Pkg/Application/UsbfnMsdApp/UsbfnMsdApp.inf
-
-  #
   # OnePlus 6(T) A/B Slot Support
   #
 !ifdef $(AB_SLOTS_SUPPORT)
