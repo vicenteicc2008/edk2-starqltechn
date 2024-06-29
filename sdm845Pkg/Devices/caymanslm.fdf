@@ -428,7 +428,6 @@ APRIORI DXE {
     SECTION UI = "ClockDxe"
   }
 
-
   FILE DRIVER = AF9763A2-033B-4109-8E17-56A98D380C92 {
     SECTION DXE_DEPEX = sdm845Pkg/Binary/845/DALTLMM/DALTLMM.depex
     SECTION PE32 = sdm845Pkg/Binary/845/DALTLMM/DALTLMM.efi
@@ -474,7 +473,7 @@ APRIORI DXE {
     SECTION PE32 = sdm845Pkg/Binary/845/UsbfnDwc3Dxe/UsbfnDwc3Dxe.efi
     SECTION UI = "UsbfnDwc3Dxe"
   }
-  
+
   FILE DRIVER = 2d2e62cf-9ecf-43b7-8219-94e7fc713dfe {
     SECTION PE32 = sdm845Pkg/Binary/845/UsbKbDxe/UsbKbDxe.efi
     SECTION UI = "UsbKbDxe"
@@ -509,23 +508,39 @@ APRIORI DXE {
     SECTION PE32 = sdm845Pkg/Binary/845/UFSDxe/UFSDxe.efi
     SECTION UI = "UFSDxe"
   }
+  
+  FILE DRIVER = F0D87C5E-4D5D-4FB5-939F-A6768AE8A309 {
+    SECTION DXE_DEPEX = sdm845Pkg/Binary/845/Synaptics/SynapticsTouchDxe.depex
+    SECTION PE32 = sdm845Pkg/Binary/845/Synaptics/SynapticsTouchDxe.efi
+    SECTION UI = "SynapticsTouchDxe"
+  }
 
-    FILE DRIVER = 5AF77F10-90DF-4E7E-8325-A17EC09D5443 {
+  FILE DRIVER = F0D87C5E-4D5D-4FB5-939F-A6768AE8A310 {
+    SECTION DXE_DEPEX = sdm845Pkg/Binary/845/Synaptics/SynapticsTouchDeviceDxe.depex
+    SECTION PE32 = sdm845Pkg/Binary/845/Synaptics/SynapticsTouchDeviceDxe.efi
+    SECTION UI = "SynapticsTouchDeviceDxe"
+  }
+
+  FILE DRIVER = 5AF77F10-90DF-4E7E-8325-A17EC09D5443 {
     SECTION DXE_DEPEX = sdm845Pkg/Binary/845/UsbMsdDxe/UsbMsdDxe.depex
     SECTION PE32 = sdm845Pkg/Binary/845/UsbMsdDxe/UsbMsdDxe.efi
     SECTION UI = "UsbMsdDxe"
   }
-  
 
   INF sdm845Pkg/Drivers/sdm845Dxe/sdm845Dxe.inf
   INF sdm845Pkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  
+  #
+  # USB Mass Storage Support
+  #
+  INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
 
   #
   # USB Host Support
   #
   INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
-  INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
+
 
   #
   # FAT filesystem + GPT/MBR partitioning
@@ -549,7 +564,7 @@ APRIORI DXE {
 
   FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {   
     SECTION RAW = sdm845Pkg/AcpiOp6/Sdm845/DBG2.aml
-    SECTION RAW = sdm845Pkg/AcpiOp6/starqlte/DSDT_test.aml
+    SECTION RAW = sdm845Pkg/AcpiOp6/caymanslm/DSDT_caymanslm.aml
     SECTION RAW = sdm845Pkg/AcpiOp6/Sdm845/MADT.aml
     SECTION RAW = sdm845Pkg/AcpiOp6/Sdm845/FADT.aml
     SECTION RAW = sdm845Pkg/AcpiOp6/Sdm845/GTDT.aml
@@ -557,6 +572,15 @@ APRIORI DXE {
     SECTION RAW = sdm845Pkg/AcpiOp6/Sdm845/PPTT.aml
     SECTION UI = "AcpiTables"
   }
+
+  #
+  # FDT support
+  #
+  #INF EmbeddedPkg/Drivers/DtPlatformDxe/DtPlatformDxe.inf
+
+  #FILE FREEFORM = 25462CDA-221F-47DF-AC1D-259CFAA4E326 {
+  #  SECTION RAW = sdm845Pkg/FdtBlob/sdm845-oneplus-fajita.dtb
+  #}
 
   #
   # SMBIOS Support
@@ -574,7 +598,6 @@ APRIORI DXE {
 
   INF sdm845Pkg/Binary/845/LinuxSimpleMassStorage/LinuxSimpleMassStorage.inf
 
-
   #
   # Bds
   #
@@ -586,6 +609,18 @@ APRIORI DXE {
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
   INF MdeModulePkg/Application/UiApp/UiApp.inf
   INF sdm845Pkg/Drivers/LogoDxe/LogoDxe.inf
+
+  #
+  # OnePlus 6(T) A/B Slot Support
+  #
+!ifdef $(AB_SLOTS_SUPPORT)
+  INF sdm845Pkg/Application/SwitchSlotsApp/SwitchSlotsApp.inf
+  INF sdm845Pkg/Drivers/BootSlotDxe/BootSlotDxe.inf
+!else
+  # Old unstable solution, remove once BootSlotDxe fully tested
+  INF sdm845Pkg/Drivers/Op6tSlotDxe/Op6tSlotDxe.inf
+!endif #$(AB_SLOTS_SUPPORT)
+
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
