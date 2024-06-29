@@ -31,8 +31,6 @@ DEVICES=(
 	akershus
 	equuleus
         starqlte
-        akari
-        sargo
 )
 #####################################
 
