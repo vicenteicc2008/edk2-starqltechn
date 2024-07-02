@@ -195,13 +195,12 @@ then	set -e
 		git submodule set-url libs/freetype https://hub.fastgit.xyz/freetype/freetype.git
 		git submodule init;git submodule update
 		popd
-		git checkout .gitmodules
-	else	git submodule init;git submodule update --depth 1
+	else	git submodule init;git submodule update --depth 1 --force
 		pushd edk2
-		git submodule init;git submodule update
+		git submodule init;git submodule update --force
 		popd
 		pushd sdm845Pkg/Library/SimpleInit
-		git submodule init;git submodule update
+		git submodule init;git submodule update --force
 		popd
                 cp ${PWD}/assets/header.makefile ${PWD}/edk2/BaseTools/Source/C/Makefiles
 	fi
