@@ -177,7 +177,7 @@ then	set -e
 		git submodule set-url edk2-platforms               https://hub.fastgit.xyz/tianocore/edk2-platforms.git
 		git submodule set-url sdm845Pkg/Binary             https://hub.fastgit.xyz/edk2-porting/edk2-sdm845-binary.git
 		git submodule set-url sdm845Pkg/Library/SimpleInit https://github.com/BigfootACA/simple-init.git
-		git submodule init;git submodule update --depth 1
+		git submodule init;git submodule update --depth 1 --force
 		pushd edk2
 
 		git submodule set-url ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3   https://hub.fastgit.xyz/ucb-bar/berkeley-softfloat-3.git
