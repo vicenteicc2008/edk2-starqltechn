@@ -41,7 +41,7 @@ sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu py
 1.Clone this project
 
 ```bash
-git clone https://github.com/Daniel224455/edk2-resurrect-v2.0.git --depth=1
+git clone https://github.com/vicenteicc2008/edk2-starqltechn.git --depth=1
 cd edk2-resurrect-v2.0
 ```
 
