@@ -11,6 +11,9 @@
 
 !include sdm845Pkg/sdm845Pkg.dsc
 
+[BuildOptions.common]
+  GCC:*_*_AARCH64_CC_FLAGS = -DMEMORY_6GB=1 
+
 [PcdsFixedAtBuild.common]
 
   gsdm845PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1440
